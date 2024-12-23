@@ -18,7 +18,7 @@ export class AreasController {
     const queryWithDefaults = plainToInstance(GetAreasDto, query, {
       exposeDefaultValues: true,
       excludeExtraneousValues: false,
-      enableImplicitConversion: true, // Gelen verileri DTO'ya uygun türlere dönüştür
+      enableImplicitConversion: true,
     });
     return this.areasService.getAllAreas(queryWithDefaults);
   }

@@ -26,17 +26,14 @@ export class AreasService {
     // PostGIS ile uyumlu GeoJSON formatında veriyi kaydet
     const newArea = this.areaRepository.create({
       name,
-      coordinates, // GeoJSON formatı doğrudan kaydediliyor
+      coordinates,
     });
 
     return await this.areaRepository.save(newArea);
   }
 
   async getAllAreas(dto: GetAreasDto) {
-    //await this.cacheManager.reset();
-    //await this.cacheManager.set('testKey', { test: 'data' }, 3600); // 1 saat
-    //const testData = await this.cacheManager.get('testKey');
-    //console.log('Cached Test Data:', testData);
+  
     const cacheKey = `areas:limit=${dto.limit}:page=${dto.page}`;
 
     // Cache kontrolü
@@ -57,7 +54,7 @@ export class AreasService {
     };
 
     // Cache'e kaydet
-    await this.cacheManager.set(cacheKey, result, 3600); // 1 saat
+    await this.cacheManager.set(cacheKey, result, 3600);
 
     return result;
   }
