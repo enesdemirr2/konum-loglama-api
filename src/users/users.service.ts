@@ -16,7 +16,6 @@ export class UsersService {
   async createUser(createUserDto: CreateUserDto): Promise<User> {
     const { name, email } = createUserDto;
 
-    // Aynı e-posta ile kayıtlı kullanıcı var mı kontrol edelim
     const existingUser = await this.userRepository.findOne({ where: { email } });
     if (existingUser) {
         throw new HttpException('User already exists', HttpStatus.CONFLICT);
@@ -25,7 +24,6 @@ export class UsersService {
     const newUser = this.userRepository.create({
       name,
       email,
-      // password: hashedPassword, vs.
     });
     return this.userRepository.save(newUser);
   }

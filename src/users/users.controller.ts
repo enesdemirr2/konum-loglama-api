@@ -13,13 +13,11 @@ export class UsersController {
     return await this.usersService.createUser(createUserDto);
   }
 
-  // Örnek bir kullanıcı listeleme
   @Get()
   async getAllUsers() {
     return await this.usersService.getAllUsers();
   }
 
-  // Örnek bir tekil kullanıcı getirme
   @Get(':id')
   async getUserById(@Param('id') id: number) {
     return await this.usersService.getUserById(id);

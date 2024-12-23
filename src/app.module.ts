@@ -22,7 +22,7 @@ import { BullModule } from '@nestjs/bull';
     CacheModule.register({
       ttl: 60 * 60, // Varsayılan önbellek süresi (1 saat)
       max: 100, // Maksimum cache boyutu
-      isGlobal: true, // Cache'i global yapar
+      isGlobal: true,
     }),
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
@@ -34,7 +34,7 @@ import { BullModule } from '@nestjs/bull';
       database: process.env.DATABASE_NAME,
       autoLoadEntities: true,
       logging: true,
-      synchronize: true, // Geliştirme için aktif, üretimde devre dışı bırak
+      synchronize: true,
     }),
     TypeOrmModule.forFeature([Location, Area, Log]),
     LocationsModule,
