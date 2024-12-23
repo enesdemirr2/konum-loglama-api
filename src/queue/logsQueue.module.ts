@@ -9,16 +9,16 @@ import { Log } from 'src/entities/log.entity';
   imports: [
     BullModule.forRoot({
       redis: {
-        host: '127.0.0.1', // Redis sunucusunun adresi
-        port: 6379,        // Varsayılan Redis portu
+        host: '127.0.0.1',
+        port: 6379,       
       },
     }),
     BullModule.registerQueue({
-      name: 'logs', // Kuyruk adı
+      name: 'logs',
     }),
-    TypeOrmModule.forFeature([Log]), // Log entitesini ekleyin
+    TypeOrmModule.forFeature([Log]),
   ],
   providers: [LogProcessor],
-  exports: [BullModule], // Kuyruğu dışa aktar
+  exports: [BullModule],
 })
 export class LogsQueueModule {}
