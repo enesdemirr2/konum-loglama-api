@@ -21,7 +21,6 @@ export class LocationsService {
   async checkAndLogLocation(dto: LocationDto): Promise<string> {
     const { userId, latitude, longitude } = dto;
   
-    // Kullanıcının geçerli olup olmadığını kontrol et
     const user = await this.userRepository.findOne({ where: { id: userId } });
     if (!user) { 
       throw new Error('Kullanıcı bulunamadı');
