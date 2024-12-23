@@ -6,8 +6,8 @@ export class Location {
   id: number;
 
   @Column()
-  userId: number; // Kullanıcı ID'si
+  userId: number;
 
   @Column('geometry', { spatialFeatureType: 'Point', srid: 4326 })
-  coordinates: any; // Kullanıcının gönderdiği konum (GeoJSON)
+  coordinates: any;
 }

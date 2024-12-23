@@ -8,10 +8,10 @@ export class Log {
   id: number;
 
   @Column()
-  userId: number; // Sadece kullanıcı ID'sini saklar
+  userId: number;
 
   @Column()
-  areaId: number; // Sadece alan ID'sini saklar
+  areaId: number;
 
   @Column()
   entryTime: Date;
