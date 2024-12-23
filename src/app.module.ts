@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LocationsModule } from './locations/locations.module';
 import { AreasModule } from './areas/areas.module';
-import { LogsModule } from './logs/logs.module';
+import { LogsModule } from './loges/logs.module';
 import { Location } from './entities/location.entity';
 import { Area } from './entities/area.entity';
 import { Log } from './entities/log.entity';

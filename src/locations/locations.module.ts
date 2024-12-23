@@ -3,7 +3,7 @@ import { LocationsController } from './locations.controller';
 import { LocationsService } from './locations.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Location } from '../entities/location.entity';
-import { LogsModule } from 'src/logs/logs.module';
+import { LogsModule } from 'src/loges/logs.module';
 import { UsersModule } from 'src/users/users.module';
 import { AreasModule } from 'src/areas/areas.module';
 import { LogsQueueModule } from 'src/queue/LogsQueue.module';
